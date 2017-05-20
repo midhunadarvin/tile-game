@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Tile Game</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+		<link rel="stylesheet" href="./pure-ui.min.css">
+		<link rel="stylesheet" href="./layout.css">
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div id="layout" class="">
+			<!-- Menu toggle -->
+			<a href="#menu" id="menuLink" class="menu-link">
+				<!-- Hamburger icon -->
+				<span></span>
+			</a>
+
+			<div id="menu" class="">
+				<div class="pure-menu">
+					<a class="pure-menu-heading" href="#">Tile Game</a>
+
+					<ul class="pure-menu-list">
+						<li class="pure-menu-item"><a href="https://github.com/midhunadarvin" class="pure-menu-link">Github</a></li>
+						<li class="pure-menu-item"><a href="http://stackoverflow.com/users/3764156/midhun-darvin" class="pure-menu-link">Stack overflow</a></li>
+						<li class="pure-menu-heading">Difficulty</li>
+						<li class="pure-menu-item" id="easy-button"><a href="#" class="pure-menu-link">Easy</a></li>
+						<li class="pure-menu-item" id="medium-button"><a href="#" class="pure-menu-link">Medium</a></li>
+						<li class="pure-menu-item" id="hard-button"><a href="#" class="pure-menu-link">Difficult</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="main">
+				<div class="header">
+					<h1>Tile Game</h1>
+					<h2>Arrange the tiles in increasing order. Use the arrow keys to move the blank tile.</h2>
+				</div>
+
+				<div class="content">
+					<div id="success-box" class="container success-box">
+						<div class="success-text">Congrats! You solved it. Your time is <span id="time-result"></span>. Do you wish to try again? <button id="success-button" class="pure-button pure-button-primary success-button">Ok</button></div>
+					</div>
+					<div class="container time-container">
+						<button id="reset-button" class="reset-button pure-button">Shuffle</button>
+						<button id="undo-button" class="undo-button pure-button" disabled="true">Undo</button>
+						<h1 id="time">00:00</h1>
+					</div>
+					<div class="container">
+						<div id="grid-3-3" class="tile-grid pure-g grid-3-3">
+							<div class="pure-u-1-3 tile" value="1"><p>1</p></div>
+							<div class="pure-u-1-3 tile" value="2"><p>2</p></div>
+							<div class="pure-u-1-3 tile" value="3"><p>3</p></div>
+							<div class="pure-u-1-3 tile" value="4"><p>4</p></div>
+							<div class="pure-u-1-3 tile" value="5"><p>5</p></div>
+							<div class="pure-u-1-3 tile" value="6"><p>6</p></div>
+							<div class="pure-u-1-3 tile" value="7"><p>7</p></div>
+							<div class="pure-u-1-3 tile" value="8"><p>8</p></div>
+							<div class="pure-u-1-3 tile blank" value="0"><p>b</p></div>
+						</div>
+					</div>
+				
+					<div class="container" >
+						<div id="grid-4-4" class="tile-grid pure-g grid-4-4">
+							<div class="pure-u-1-4 tile" value="1"><p>1</p></div>
+							<div class="pure-u-1-4 tile" value="2"><p>2</p></div>
+							<div class="pure-u-1-4 tile" value="3"><p>3</p></div>
+							<div class="pure-u-1-4 tile" value="4"><p>4</p></div>
+							<div class="pure-u-1-4 tile" value="5"><p>5</p></div>
+							<div class="pure-u-1-4 tile" value="6"><p>6</p></div>
+							<div class="pure-u-1-4 tile" value="7"><p>7</p></div>
+							<div class="pure-u-1-4 tile" value="8"><p>8</p></div>
+							<div class="pure-u-1-4 tile" value="9"><p>9</p></div>
+							<div class="pure-u-1-4 tile" value="10"><p>10</p></div>
+							<div class="pure-u-1-4 tile" value="11"><p>11</p></div>
+							<div class="pure-u-1-4 tile" value="12"><p>12</p></div>
+							<div class="pure-u-1-4 tile" value="13"><p>13</p></div>
+							<div class="pure-u-1-4 tile" value="14"><p>14</p></div>
+							<div class="pure-u-1-4 tile" value="15"><p>15</p></div>
+							<div class="pure-u-1-4 tile blank" value="0"><p>b</p></div>
+						</div>
+					</div>
+
+					<div class="container" >
+						<div id="grid-10-10" class="tile-grid pure-g grid-10-10">
+							<div class="pure-u-1-10 tile" value="1"><p>1</p></div>
+							<div class="pure-u-1-10 tile" value="2"><p>2</p></div>
+							<div class="pure-u-1-10 tile" value="3"><p>3</p></div>
+							<div class="pure-u-1-10 tile" value="4"><p>4</p></div>
+							<div class="pure-u-1-10 tile" value="5"><p>5</p></div>
+							<div class="pure-u-1-10 tile" value="6"><p>6</p></div>
+							<div class="pure-u-1-10 tile" value="7"><p>7</p></div>
+							<div class="pure-u-1-10 tile" value="8"><p>8</p></div>
+							<div class="pure-u-1-10 tile" value="9"><p>9</p></div>
+							<div class="pure-u-1-10 tile" value="10"><p>10</p></div>
+							<div class="pure-u-1-10 tile" value="11"><p>11</p></div>
+							<div class="pure-u-1-10 tile" value="12"><p>12</p></div>
+							<div class="pure-u-1-10 tile" value="13"><p>13</p></div>
+							<div class="pure-u-1-10 tile" value="14"><p>14</p></div>
+							<div class="pure-u-1-10 tile" value="15"><p>15</p></div>
+							<div class="pure-u-1-10 tile" value="16"><p>16</p></div>
+							<div class="pure-u-1-10 tile" value="17"><p>17</p></div>
+							<div class="pure-u-1-10 tile" value="18"><p>18</p></div>
+							<div class="pure-u-1-10 tile" value="19"><p>19</p></div>
+							<div class="pure-u-1-10 tile" value="20"><p>20</p></div>
+							<div class="pure-u-1-10 tile" value="21"><p>21</p></div>
+							<div class="pure-u-1-10 tile" value="22"><p>22</p></div>
+							<div class="pure-u-1-10 tile" value="23"><p>23</p></div>
+							<div class="pure-u-1-10 tile" value="24"><p>24</p></div>
+							<div class="pure-u-1-10 tile" value="25"><p>25</p></div>
+							<div class="pure-u-1-10 tile" value="26"><p>26</p></div>
+							<div class="pure-u-1-10 tile" value="27"><p>27</p></div>
+							<div class="pure-u-1-10 tile" value="28"><p>28</p></div>
+							<div class="pure-u-1-10 tile" value="29"><p>29</p></div>
+							<div class="pure-u-1-10 tile" value="30"><p>30</p></div>
+							<div class="pure-u-1-10 tile" value="31"><p>31</p></div>
+							<div class="pure-u-1-10 tile" value="32"><p>32</p></div>
+							<div class="pure-u-1-10 tile" value="33"><p>33</p></div>
+							<div class="pure-u-1-10 tile" value="34"><p>34</p></div>
+							<div class="pure-u-1-10 tile" value="35"><p>35</p></div>
+							<div class="pure-u-1-10 tile" value="36"><p>36</p></div>
+							<div class="pure-u-1-10 tile" value="37"><p>37</p></div>
+							<div class="pure-u-1-10 tile" value="38"><p>38</p></div>
+							<div class="pure-u-1-10 tile" value="39"><p>39</p></div>
+							<div class="pure-u-1-10 tile" value="40"><p>40</p></div>
+							<div class="pure-u-1-10 tile" value="41"><p>41</p></div>
+							<div class="pure-u-1-10 tile" value="42"><p>42</p></div>
+							<div class="pure-u-1-10 tile" value="43"><p>43</p></div>
+							<div class="pure-u-1-10 tile" value="44"><p>44</p></div>
+							<div class="pure-u-1-10 tile" value="45"><p>45</p></div>
+							<div class="pure-u-1-10 tile" value="46"><p>46</p></div>
+							<div class="pure-u-1-10 tile" value="47"><p>47</p></div>
+							<div class="pure-u-1-10 tile" value="48"><p>48</p></div>
+							<div class="pure-u-1-10 tile" value="49"><p>49</p></div>
+							<div class="pure-u-1-10 tile" value="50"><p>50</p></div>
+							<div class="pure-u-1-10 tile" value="51"><p>51</p></div>
+							<div class="pure-u-1-10 tile" value="52"><p>52</p></div>
+							<div class="pure-u-1-10 tile" value="53"><p>53</p></div>
+							<div class="pure-u-1-10 tile" value="54"><p>54</p></div>
+							<div class="pure-u-1-10 tile" value="55"><p>55</p></div>
+							<div class="pure-u-1-10 tile" value="56"><p>56</p></div>
+							<div class="pure-u-1-10 tile" value="57"><p>57</p></div>
+							<div class="pure-u-1-10 tile" value="58"><p>58</p></div>
+							<div class="pure-u-1-10 tile" value="59"><p>59</p></div>
+							<div class="pure-u-1-10 tile" value="60"><p>60</p></div>
+							<div class="pure-u-1-10 tile" value="61"><p>61</p></div>
+							<div class="pure-u-1-10 tile" value="62"><p>62</p></div>
+							<div class="pure-u-1-10 tile" value="63"><p>63</p></div>
+							<div class="pure-u-1-10 tile" value="64"><p>64</p></div>
+							<div class="pure-u-1-10 tile" value="65"><p>65</p></div>
+							<div class="pure-u-1-10 tile" value="66"><p>66</p></div>
+							<div class="pure-u-1-10 tile" value="67"><p>67</p></div>
+							<div class="pure-u-1-10 tile" value="68"><p>68</p></div>
+							<div class="pure-u-1-10 tile" value="69"><p>69</p></div>
+							<div class="pure-u-1-10 tile" value="70"><p>70</p></div>
+							<div class="pure-u-1-10 tile" value="71"><p>71</p></div>
+							<div class="pure-u-1-10 tile" value="72"><p>72</p></div>
+							<div class="pure-u-1-10 tile" value="73"><p>73</p></div>
+							<div class="pure-u-1-10 tile" value="74"><p>74</p></div>
+							<div class="pure-u-1-10 tile" value="75"><p>75</p></div>
+							<div class="pure-u-1-10 tile" value="76"><p>76</p></div>
+							<div class="pure-u-1-10 tile" value="77"><p>77</p></div>
+							<div class="pure-u-1-10 tile" value="78"><p>78</p></div>
+							<div class="pure-u-1-10 tile" value="79"><p>79</p></div>
+							<div class="pure-u-1-10 tile" value="80"><p>80</p></div>
+							<div class="pure-u-1-10 tile" value="81"><p>81</p></div>
+							<div class="pure-u-1-10 tile" value="82"><p>82</p></div>
+							<div class="pure-u-1-10 tile" value="83"><p>83</p></div>
+							<div class="pure-u-1-10 tile" value="84"><p>84</p></div>
+							<div class="pure-u-1-10 tile" value="85"><p>85</p></div>
+							<div class="pure-u-1-10 tile" value="86"><p>86</p></div>
+							<div class="pure-u-1-10 tile" value="87"><p>87</p></div>
+							<div class="pure-u-1-10 tile" value="88"><p>88</p></div>
+							<div class="pure-u-1-10 tile" value="89"><p>89</p></div>
+							<div class="pure-u-1-10 tile" value="90"><p>90</p></div>
+							<div class="pure-u-1-10 tile" value="91"><p>91</p></div>
+							<div class="pure-u-1-10 tile" value="92"><p>92</p></div>
+							<div class="pure-u-1-10 tile" value="93"><p>93</p></div>
+							<div class="pure-u-1-10 tile" value="94"><p>94</p></div>
+							<div class="pure-u-1-10 tile" value="95"><p>95</p></div>
+							<div class="pure-u-1-10 tile" value="96"><p>96</p></div>
+							<div class="pure-u-1-10 tile" value="97"><p>97</p></div>
+							<div class="pure-u-1-10 tile" value="98"><p>98</p></div>
+							<div class="pure-u-1-10 tile" value="99"><p>99</p></div>
+							<div class="pure-u-1-10 tile blank" value="0"><p>b</p></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script src="./ui.js"></script>
+	<script src="./app.js"></script>
+</html>

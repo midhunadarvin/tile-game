@@ -1,0 +1,71 @@
+/*Custom Styles*/
+
+body { font-family: sans-serif;color:#333;}
+
+.tile {
+	text-align: center;
+	height: 100%;
+	padding: 2.5% 0;
+	background-color: #ececec;
+	outline: 1px solid #FFF;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.grid-10-10 .tile {
+	padding: 0%;
+}
+
+.nav-menu {
+	padding:2%;
+}
+
+.container {
+	margin:5% 10%;
+}
+
+.blank p {
+	opacity: 0;
+}
+
+.time-container{
+	text-align: right;
+}
+.time-container h1 {
+	font-size: 2em;
+}
+
+.success-text {
+	font-size: 18px;
+    font-style: italic;
+}
+.success-button {
+	font-size: 14px;
+	padding-top:1%;
+	margin-left: 1%;
+	text-align: right;
+}
+
+.success-box {
+	display: none;
+}
+
+.reset-button, .undo-button {
+	float: left;
+	margin-right:1%;
+}
+
+@media only screen and (min-width: 450px) and (max-width: 640px) {
+
+  .time-container h1 { font-size: 1.5em; }
+
+}
+
+
+@media only screen and (max-width: 450px) {
+
+  .time-container h1 { font-size: 1.3em; }
+
+}
